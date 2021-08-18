@@ -38,11 +38,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var speakBtn: UIButton!
     @IBOutlet weak var colorView: UIView!
     
-    func playerPlay() {
-        player.volume = 1
-        player.play()
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -188,7 +183,11 @@ class ViewController: UIViewController {
             playerPlay()
         }
     }
-    
+
+    func playerPlay() {
+        player.volume = 1
+        player.play()
+    }
 }
 
 extension ViewController :AVSpeechSynthesizerDelegate {

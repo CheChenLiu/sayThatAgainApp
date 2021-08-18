@@ -12,7 +12,11 @@ class ViewController: UIViewController {
     
     let player = AVPlayer()
     
-    let synthesizer = AVSpeechSynthesizer()
+    lazy var synthesizer:AVSpeechSynthesizer = {
+        let synthesizer = AVSpeechSynthesizer()
+        synthesizer.delegate = self
+        return synthesizer
+    }()
     
     var language:String = "zh-TW"
     
@@ -101,13 +105,13 @@ class ViewController: UIViewController {
                 setPauseIcon()
                 
             } else if synthesizer.isSpeaking,
-                      !synthesizer.isPaused{
+                      !synthesizer.isPaused {
                 
                 synthesizer.pauseSpeaking(at: AVSpeechBoundary.immediate)
                 setPlayIcon()
                 
             } else if synthesizer.isSpeaking,
-                      synthesizer.isPaused{
+                      synthesizer.isPaused {
                 
                 synthesizer.continueSpeaking()
                 setPauseIcon()
@@ -187,3 +191,8 @@ class ViewController: UIViewController {
     
 }
 
+extension ViewController :AVSpeechSynthesizerDelegate {
+    func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didFinish utterance: AVSpeechUtterance) {
+        setPlayIcon()
+    }
+}

@@ -13,6 +13,15 @@
 		1AAFE48B26C3D2440082709A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AAFE48926C3D2440082709A /* Main.storyboard */; };
 		1AAFE48D26C3D2460082709A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1AAFE48C26C3D2460082709A /* Assets.xcassets */; };
 		1AAFE49026C3D2460082709A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AAFE48E26C3D2460082709A /* LaunchScreen.storyboard */; };
+		1AAFE4C026CD05330082709A /* bassSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1AAFE4BA26CD05330082709A /* bassSound.mp3 */; };
+		1AAFE4C126CD05330082709A /* hihatSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1AAFE4BB26CD05330082709A /* hihatSound.mp3 */; };
+		1AAFE4C226CD05330082709A /* rideSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1AAFE4BC26CD05330082709A /* rideSound.mp3 */; };
+		1AAFE4C326CD05330082709A /* snareSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1AAFE4BD26CD05330082709A /* snareSound.mp3 */; };
+		1AAFE4C426CD05330082709A /* tom2Sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1AAFE4BE26CD05330082709A /* tom2Sound.mp3 */; };
+		1AAFE4C826CD053E0082709A /* hihatSound2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1AAFE4C526CD053D0082709A /* hihatSound2.mp3 */; };
+		1AAFE4C926CD053E0082709A /* tom1Sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1AAFE4C626CD053D0082709A /* tom1Sound.mp3 */; };
+		1AAFE4CA26CD053E0082709A /* crashSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1AAFE4C726CD053E0082709A /* crashSound.mp3 */; };
+		1AAFE4CC26CD0CD00082709A /* floortomSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1AAFE4CB26CD0CD00082709A /* floortomSound.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +33,15 @@
 		1AAFE48C26C3D2460082709A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1AAFE48F26C3D2460082709A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1AAFE49126C3D2460082709A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1AAFE4BA26CD05330082709A /* bassSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bassSound.mp3; sourceTree = "<group>"; };
+		1AAFE4BB26CD05330082709A /* hihatSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = hihatSound.mp3; sourceTree = "<group>"; };
+		1AAFE4BC26CD05330082709A /* rideSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = rideSound.mp3; sourceTree = "<group>"; };
+		1AAFE4BD26CD05330082709A /* snareSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = snareSound.mp3; sourceTree = "<group>"; };
+		1AAFE4BE26CD05330082709A /* tom2Sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = tom2Sound.mp3; sourceTree = "<group>"; };
+		1AAFE4C526CD053D0082709A /* hihatSound2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = hihatSound2.mp3; sourceTree = "<group>"; };
+		1AAFE4C626CD053D0082709A /* tom1Sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = tom1Sound.mp3; sourceTree = "<group>"; };
+		1AAFE4C726CD053E0082709A /* crashSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = crashSound.mp3; sourceTree = "<group>"; };
+		1AAFE4CB26CD0CD00082709A /* floortomSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = floortomSound.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +78,15 @@
 				1AAFE48526C3D2440082709A /* SceneDelegate.swift */,
 				1AAFE48726C3D2440082709A /* ViewController.swift */,
 				1AAFE48926C3D2440082709A /* Main.storyboard */,
+				1AAFE4BD26CD05330082709A /* snareSound.mp3 */,
+				1AAFE4BA26CD05330082709A /* bassSound.mp3 */,
+				1AAFE4BB26CD05330082709A /* hihatSound.mp3 */,
+				1AAFE4BC26CD05330082709A /* rideSound.mp3 */,
+				1AAFE4C726CD053E0082709A /* crashSound.mp3 */,
+				1AAFE4C526CD053D0082709A /* hihatSound2.mp3 */,
+				1AAFE4C626CD053D0082709A /* tom1Sound.mp3 */,
+				1AAFE4BE26CD05330082709A /* tom2Sound.mp3 */,
+				1AAFE4CB26CD0CD00082709A /* floortomSound.mp3 */,
 				1AAFE48C26C3D2460082709A /* Assets.xcassets */,
 				1AAFE48E26C3D2460082709A /* LaunchScreen.storyboard */,
 				1AAFE49126C3D2460082709A /* Info.plist */,
@@ -124,9 +151,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AAFE4C026CD05330082709A /* bassSound.mp3 in Resources */,
+				1AAFE4C226CD05330082709A /* rideSound.mp3 in Resources */,
+				1AAFE4CC26CD0CD00082709A /* floortomSound.mp3 in Resources */,
 				1AAFE49026C3D2460082709A /* LaunchScreen.storyboard in Resources */,
 				1AAFE48D26C3D2460082709A /* Assets.xcassets in Resources */,
+				1AAFE4C126CD05330082709A /* hihatSound.mp3 in Resources */,
+				1AAFE4C926CD053E0082709A /* tom1Sound.mp3 in Resources */,
+				1AAFE4C426CD05330082709A /* tom2Sound.mp3 in Resources */,
 				1AAFE48B26C3D2440082709A /* Main.storyboard in Resources */,
+				1AAFE4C326CD05330082709A /* snareSound.mp3 in Resources */,
+				1AAFE4C826CD053E0082709A /* hihatSound2.mp3 in Resources */,
+				1AAFE4CA26CD053E0082709A /* crashSound.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -128,8 +128,9 @@ class ViewController: UIViewController {
         var soundUrl:URL!
         //解包後的寫法，在if裡試著做東西，成功才執行if內的功能
         if sender == bassBtn {
-            if let url = Bundle.main.url(forResource: "bassSound", withExtension: "mp3") {
-                soundUrl = url
+//            if let url = Bundle.main.url(forResource: "bassSound", withExtension: "mp3") {
+//                soundUrl = url
+            soundUrl = Bundle.main.url(forResource: "bassSound", withExtension: "mp3")!
         }
         if sender == snareBtn {
              soundUrl = Bundle.main.url(forResource: "snareSound", withExtension: "mp3")!
@@ -159,9 +160,8 @@ class ViewController: UIViewController {
         let playerItem = AVPlayerItem(url: soundUrl)
         player.replaceCurrentItem(with: playerItem)
         playerPlay()
-            
+        
         }
-    }
 
     func playerPlay() {
         player.volume = 1

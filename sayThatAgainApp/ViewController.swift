@@ -12,11 +12,7 @@ class ViewController: UIViewController {
     
     let player = AVPlayer()
     
-    lazy var synthesizer:AVSpeechSynthesizer = {
-        let synthesizer = AVSpeechSynthesizer()
-        synthesizer.delegate = self
-        return synthesizer
-    }()
+    let synthesizer = AVSpeechSynthesizer()
     
     var language:String = "zh-TW"
     
@@ -89,9 +85,10 @@ class ViewController: UIViewController {
         speechUtterance.pitchMultiplier = voicePitchSlider.value
         speechUtterance.volume = speakVolumnSlider.value
         
+        //印出當前這兩個的值
         print("synthesizer.isSpeaking = \(synthesizer.isSpeaking)")
         print("synthesizer.isPaused = \(synthesizer.isPaused)")
-        
+        //isSpeaking我錯誤的理解他了，isSpeaking停下來應該是整段句子講完，甚至應該使用stopSpeaking，單純使用isPaused只是中斷他播放，但他還是在Speaking，透過在錯誤的地方print出行數來debug，例如在95行的地方寫print("Line = 95")，檢查程式是否有執行到這裡，進而debug出是不是判斷式有問題
         if wordTextField.text != nil  {
             if !synthesizer.isSpeaking,
                !synthesizer.isPaused {
@@ -128,59 +125,41 @@ class ViewController: UIViewController {
     }
     
     @IBAction func hitDrumSet(_ sender: UIButton) {
+        var soundUrl:URL!
+        //解包後的寫法，在if裡試著做東西，成功才執行if內的功能
         if sender == bassBtn {
-            let soundUrl = Bundle.main.url(forResource: "bassSound", withExtension: "mp3")!
-            let playerItem = AVPlayerItem(url: soundUrl)
-            player.replaceCurrentItem(with: playerItem)
-            playerPlay()
+            if let url = Bundle.main.url(forResource: "bassSound", withExtension: "mp3") {
+                soundUrl = url
         }
         if sender == snareBtn {
-            let soundUrl = Bundle.main.url(forResource: "snareSound", withExtension: "mp3")!
-            let playerItem = AVPlayerItem(url: soundUrl)
-            player.replaceCurrentItem(with: playerItem)
-            playerPlay()
+             soundUrl = Bundle.main.url(forResource: "snareSound", withExtension: "mp3")!
         }
         if sender == rightHiHatBtn {
-            let soundUrl = Bundle.main.url(forResource: "hihatSound", withExtension: "mp3")!
-            let playerItem = AVPlayerItem(url: soundUrl)
-            player.replaceCurrentItem(with: playerItem)
-            playerPlay()
+             soundUrl = Bundle.main.url(forResource: "hihatSound", withExtension: "mp3")!
         }
         if sender == leftHiHatBtn {
-            let soundUrl = Bundle.main.url(forResource: "hihatSound2", withExtension: "mp3")!
-            let playerItem = AVPlayerItem(url: soundUrl)
-            player.replaceCurrentItem(with: playerItem)
-            playerPlay()
+             soundUrl = Bundle.main.url(forResource: "hihatSound2", withExtension: "mp3")!
         }
         if sender == crashBtn {
-            let soundUrl = Bundle.main.url(forResource: "crashSound", withExtension: "mp3")!
-            let playerItem = AVPlayerItem(url: soundUrl)
-            player.replaceCurrentItem(with: playerItem)
-            playerPlay()
+             soundUrl = Bundle.main.url(forResource: "crashSound", withExtension: "mp3")!
         }
         if sender == tom1Btn {
-            let soundUrl = Bundle.main.url(forResource: "tom1Sound", withExtension: "mp3")!
-            let playerItem = AVPlayerItem(url: soundUrl)
-            player.replaceCurrentItem(with: playerItem)
-            playerPlay()
+             soundUrl = Bundle.main.url(forResource: "tom1Sound", withExtension: "mp3")!
         }
         if sender == tom2Btn {
-            let soundUrl = Bundle.main.url(forResource: "tom2Sound", withExtension: "mp3")!
-            let playerItem = AVPlayerItem(url: soundUrl)
-            player.replaceCurrentItem(with: playerItem)
-            playerPlay()
+             soundUrl = Bundle.main.url(forResource: "tom2Sound", withExtension: "mp3")!
         }
         if sender == rideBtn {
-            let soundUrl = Bundle.main.url(forResource: "rideSound", withExtension: "mp3")!
-            let playerItem = AVPlayerItem(url: soundUrl)
-            player.replaceCurrentItem(with: playerItem)
-            playerPlay()
+             soundUrl = Bundle.main.url(forResource: "rideSound", withExtension: "mp3")!
         }
         if sender == floortomBtn {
-            let soundUrl = Bundle.main.url(forResource: "floortomSound", withExtension: "mp3")!
-            let playerItem = AVPlayerItem(url: soundUrl)
-            player.replaceCurrentItem(with: playerItem)
-            playerPlay()
+             soundUrl = Bundle.main.url(forResource: "floortomSound", withExtension: "mp3")!
+        }
+        
+        let playerItem = AVPlayerItem(url: soundUrl)
+        player.replaceCurrentItem(with: playerItem)
+        playerPlay()
+            
         }
     }
 
@@ -190,8 +169,3 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController :AVSpeechSynthesizerDelegate {
-    func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didFinish utterance: AVSpeechUtterance) {
-        setPlayIcon()
-    }
-}

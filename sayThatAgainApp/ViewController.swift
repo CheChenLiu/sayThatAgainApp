@@ -126,11 +126,11 @@ class ViewController: UIViewController {
     
     @IBAction func hitDrumSet(_ sender: UIButton) {
         var soundUrl:URL!
-        //解包後的寫法，在if裡試著做東西，成功才執行if內的功能
+        //"解包"後的寫法，在if裡試著做東西，成功才執行if內的功能
         if sender == bassBtn {
-//            if let url = Bundle.main.url(forResource: "bassSound", withExtension: "mp3") {
-//                soundUrl = url
-            soundUrl = Bundle.main.url(forResource: "bassSound", withExtension: "mp3")!
+            if let url = Bundle.main.url(forResource: "bassSound", withExtension: "mp3") {
+                soundUrl = url
+//            soundUrl = Bundle.main.url(forResource: "bassSound", withExtension: "mp3")!
         }
         if sender == snareBtn {
              soundUrl = Bundle.main.url(forResource: "snareSound", withExtension: "mp3")!
@@ -168,4 +168,4 @@ class ViewController: UIViewController {
         player.play()
     }
 }
-
+}

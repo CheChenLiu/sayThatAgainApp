@@ -40,14 +40,14 @@
                                 <rect key="frame" x="108" y="299" width="183" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
-                                    <action selector="changeSlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="rzK-TB-2RF"/>
+                                    <action selector="showSliderValue:" destination="BYZ-38-t0r" eventType="valueChanged" id="rzK-TB-2RF"/>
                                 </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="xdp-Nn-U5a">
                                 <rect key="frame" x="108" y="356" width="183" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
-                                    <action selector="changeSlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="wqY-6M-nCo"/>
+                                    <action selector="showSliderValue:" destination="BYZ-38-t0r" eventType="valueChanged" id="wqY-6M-nCo"/>
                                 </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0.50" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qpS-RI-YTC">
@@ -82,7 +82,7 @@
                                 <rect key="frame" x="108" y="411" width="183" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
-                                    <action selector="changeSlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="MCT-B6-eNw"/>
+                                    <action selector="showSliderValue:" destination="BYZ-38-t0r" eventType="valueChanged" id="MCT-B6-eNw"/>
                                 </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="音量" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bbN-Dg-c9y">

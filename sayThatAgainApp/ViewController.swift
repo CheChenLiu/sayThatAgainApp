@@ -44,7 +44,7 @@ class ViewController: UIViewController {
         colorView.backgroundColor = UIColor(red: 247/255, green:247/255, blue: 247/255, alpha: 1)
     }
 
-    @IBAction func changeSlider(_ sender: Any) {
+    @IBAction func showSliderValue(_ sender: Any) {
         speedRateText.text = String(format: "%.1f", speedRateSlider.value)
         voicePitchText.text = String(format: "%.1f", voicePitchSlider.value)
     }
@@ -52,11 +52,29 @@ class ViewController: UIViewController {
     @IBAction func speedRandomBtn(_ sender: Any) {
         speedRateSlider.value = Float.random(in: 0.1...1)
         speedRateText.text = String(format: "%.1f", speedRateSlider.value)
+        
+        if (synthesizer.isSpeaking) {
+            let alert = UIAlertController.init(title: "語速遭變換", message: "請重新點擊播放鍵!", preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction.init(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            
+            synthesizer.stopSpeaking(at: AVSpeechBoundary.immediate)
+            speakBtn.setImage(UIImage(named: "playIcon"), for: UIControl.State.normal)
+        }
     }
     
     @IBAction func voicePitchRandomBtn(_ sender: Any) {
         voicePitchSlider.value = Float.random(in: 0.1...1)
         voicePitchText.text = String(format: "%.1f", voicePitchSlider.value)
+        
+        if (synthesizer.isSpeaking) {
+            let alert = UIAlertController.init(title: "音調遭變換", message: "請重新點擊播放鍵!", preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction.init(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            
+            synthesizer.stopSpeaking(at: AVSpeechBoundary.immediate)
+            speakBtn.setImage(UIImage(named: "playIcon"), for: UIControl.State.normal)
+        }
     }
     
     @IBAction func segmentDidSwitch(_ sender: UISegmentedControl) {
@@ -65,6 +83,8 @@ class ViewController: UIViewController {
             language = "en-US"
         } else if (sender.selectedSegmentIndex == 2) {
             language = "zh-HK"
+        } else if (sender.selectedSegmentIndex == 0) {
+            language = "zh-TW"
         }
         
         if (synthesizer.isSpeaking) {
